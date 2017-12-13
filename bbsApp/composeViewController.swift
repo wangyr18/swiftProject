@@ -13,13 +13,44 @@ class composeViewController: UIViewController {
     
     @IBOutlet weak var categoryText: UITextField!
     @IBOutlet weak var myTextView: UITextView!
+    @IBOutlet weak var titleText: UITextField!
     
     var ref: DatabaseReference!
     
     @IBAction func saveButtonAction(_ sender: UIBarButtonItem) {
         ref = Database.database().reference()
-        self.ref.child(categoryText.text!).childByAutoId().setValue(myTextView.text)
+        
+//        let category = categoryText.text! as String
+//        let article = myTextView.text
+//        let title = titleText.text
+        if categoryText.text! == ""{
+            createAlert("You should choose a class!")
+            return
+        }
+        else if titleText.text! == ""{
+            createAlert("A title is needed!")
+            return
+        }
+        else if myTextView.text! == ""{
+            createAlert("You should write something!")
+            return
+        }
+        else{
+            let saveDate = ["id": email, "title": titleText.text!, "article": myTextView.text!, "class": categoryText.text!]
+            self.ref.child("users").childByAutoId().setValue(saveDate)
+        }
+        
+        createAlert("Upload is succeed!")
     }
+    
+    
+    func createAlert(_ warning: String) -> Void{
+        let controller = UIAlertController(title: warning, message: "", preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "OK", style: .default, handler: {action in print("yes")})
+        controller.addAction(yesAction)
+        self.present(controller, animated: true, completion: {print("Done")})
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

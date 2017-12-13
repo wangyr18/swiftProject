@@ -7,21 +7,22 @@
 //
 
 import UIKit
+import Firebase
 
 class textViewController: UIViewController {
 
-    @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var myTextView: UITextView!
+    @IBOutlet weak var authorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        userNameLabel.text = email
-        titleLabel.text = list[myIndex]
-        myTextView.text = list1[myIndex]
-
+        titleLabel.text = postTitles[myIndex]
+        myTextView.text = postArticles[myIndex]
+//        authorLabel.text = Auth.auth().currentUser?.uid
+        authorLabel.text = userid[myIndex]
     }
 
     override func didReceiveMemoryWarning() {

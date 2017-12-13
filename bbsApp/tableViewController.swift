@@ -7,22 +7,30 @@
 //
 
 import UIKit
+import Firebase
 
 let list = ["title1", "title2", "title3", "title3", "title4", "title5", "title6", "title7", "title8"]
 let list1 = ["article1", "article2", "article3", "article3", "article4", "article5", "article6", "article7", "article8"]
 var myIndex = 0
+var postTitles = [String]()
+var postArticles = [String]()
+var userid = [String]()
 
 class tableViewController: UIViewController,UITableViewDelegate, UITableViewDataSource  {
 
     @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var myTableView: UITableView!
+    
+    var ref: DatabaseReference!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return postTitles.count
+//        return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style:UITableViewCellStyle.default, reuseIdentifier:"cell")
-        cell.textLabel?.text = list[indexPath.row]
+        cell.textLabel?.text = postTitles[indexPath.row]
         
         return cell
     }
@@ -38,6 +46,33 @@ class tableViewController: UIViewController,UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view.
         
         userNameLabel.text = email
+        
+        ref = Database.database().reference()
+//        ref.observe(DataEventType.value, with: { (snapshot) in
+//
+//            let data = snapshot.value as! NSDictionary
+//
+//            let data1 = data.allKeys as NSArray
+//            print(data1.count)
+//
+//        })
+        postTitles.removeAll()
+        postArticles.removeAll()
+        ref.child("users").observe(.childAdded) { (snapchat) in
+            if let dict = snapchat.value as? [String: String]{
+//                print(dict)
+                postTitles.append(dict["title"]!)
+                postArticles.append(dict["article"]!)
+                userid.append(snapchat.key)
+                DispatchQueue.main.async {
+                    self.myTableView.reloadData()
+                }
+            }
+        }
+
+//        while postTitles?.count == 0{
+//            sleep(1)
+//        }
     }
 
     override func didReceiveMemoryWarning() {

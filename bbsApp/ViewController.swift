@@ -31,11 +31,22 @@ class ViewController: UIViewController {
     
     @IBAction func submitButtonAction() {
         email = emailText.text
-        if email != nil, let password = passwordText.text{
-            
+        if email == ""{
+            createAlert("Please enter your email address!")
+            return
+        }
+        else if passwordText.text! == ""{
+            createAlert("Please enter your password")
+            return
+        }
+        else if passwordText.text!.count < 4{
+            createAlert("Password should have more than 3 characters!")
+            return
+        }
+        else{
             switch (mySegmentControl.selectedSegmentIndex){
             case 0:
-                Auth.auth().signIn(withEmail: email!, password: password, completion: { (user, error) in
+                Auth.auth().signIn(withEmail: email!, password: passwordText.text!, completion: { (user, error) in
                     if user != nil{
                         
                     }
@@ -44,7 +55,7 @@ class ViewController: UIViewController {
                     }
                 })
             case 1:
-                Auth.auth().createUser(withEmail: email!, password: password, completion: { (user, error) in
+                Auth.auth().createUser(withEmail: email!, password: passwordText.text!, completion: { (user, error) in
                     if user != nil{
                         
                     }
@@ -56,6 +67,17 @@ class ViewController: UIViewController {
                 return
             }
         }
+    }
+    
+    @IBAction func guestButtonAction() {
+        email = "Guest"
+    }
+    
+    func createAlert(_ warning: String) -> Void{
+        let controller = UIAlertController(title: warning, message: "", preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "OK", style: .default, handler: {action in print("yes")})
+        controller.addAction(yesAction)
+        self.present(controller, animated: true, completion: {print("Done")})
     }
     
     override func viewDidLoad() {
