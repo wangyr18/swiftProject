@@ -24,15 +24,15 @@ class composeViewController: UIViewController {
 //        let article = myTextView.text
 //        let title = titleText.text
         if categoryText.text! == ""{
-            createAlert("You should choose a class!")
+            createAlert("Topic catogory is required.")
             return
         }
         else if titleText.text! == ""{
-            createAlert("A title is needed!")
+            createAlert("Title is required")
             return
         }
         else if myTextView.text! == ""{
-            createAlert("You should write something!")
+            createAlert("Post cannot be empty")
             return
         }
         else{
@@ -40,7 +40,7 @@ class composeViewController: UIViewController {
             self.ref.child("users").childByAutoId().setValue(saveDate)
         }
         
-        createAlert("Upload is succeed!")
+        createAlert("Sucessfully uploaded.")
     }
     
     
