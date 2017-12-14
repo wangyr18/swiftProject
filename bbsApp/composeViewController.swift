@@ -40,7 +40,7 @@ class composeViewController: UIViewController {
             self.ref.child("users").childByAutoId().setValue(saveDate)
         }
         
-        createAlert("Sucessfully uploaded.")
+        createAlert("Sucessfully upload")
     }
     
     

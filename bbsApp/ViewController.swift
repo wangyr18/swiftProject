@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         case 0:
             signLabel.text = "Sign in"
         case 1:
-            signLabel.text = "Register"
+            signLabel.text = "Sign up"
         default:
             return
         }
@@ -60,7 +60,6 @@ class ViewController: UIViewController {
                         
                     }
                     else{
-                        
                     }
                 })
             default:
