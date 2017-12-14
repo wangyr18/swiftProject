@@ -361,6 +361,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Smq-FT-ucN"/>
         <segue reference="2X7-WE-k6I"/>
         <segue reference="fLo-wX-Jx9"/>
     </inferredMetricsTieBreakers>
