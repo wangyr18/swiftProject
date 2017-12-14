@@ -170,7 +170,7 @@
                                 <items>
                                     <barButtonItem title="Back" id="nls-Xd-a1B">
                                         <connections>
-                                            <segue destination="nBq-aa-G25" kind="show" id="rG1-W9-1M4"/>
+                                            <action selector="getBack:" destination="I9O-tX-pHe" id="WTs-J1-1Rl"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="RgC-t9-5tp"/>
@@ -216,6 +216,7 @@
                         <outlet property="categoryText" destination="3mU-Gd-7Kk" id="Xzq-vn-Hgc"/>
                         <outlet property="myTextView" destination="rd2-fa-Jni" id="jby-fR-Kme"/>
                         <outlet property="titleText" destination="7gg-SB-ZsQ" id="l6M-Jg-RxD"/>
+                        <segue destination="nBq-aa-G25" kind="show" identifier="Back" id="QAn-1r-hhS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="beO-cp-4zz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -367,6 +368,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="vaI-0s-qAX"/>
-        <segue reference="rG1-W9-1M4"/>
+        <segue reference="QAn-1r-hhS"/>
     </inferredMetricsTieBreakers>
 </document>

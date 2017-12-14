@@ -17,6 +17,10 @@ class composeViewController: UIViewController {
     
     var ref: DatabaseReference!
     
+    
+    @IBAction func getBack(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "Back", sender: self)
+    }
     @IBAction func saveButtonAction(_ sender: UIBarButtonItem) {
         ref = Database.database().reference()
         
@@ -38,17 +42,19 @@ class composeViewController: UIViewController {
         else{
             let saveDate = ["id": email, "title": titleText.text!, "article": myTextView.text!, "class": categoryText.text!]
             self.ref.child("users").childByAutoId().setValue(saveDate)
+            createAlert("Sucessfully upload")
         }
-        
-        createAlert("Sucessfully upload")
+
     }
     
     
     func createAlert(_ warning: String) -> Void{
         let controller = UIAlertController(title: warning, message: "", preferredStyle: .alert)
-        let yesAction = UIAlertAction(title: "OK", style: .default, handler: {action in print("yes")})
+    
+        let yesAction = UIAlertAction(title: "OK", style: .default, handler: {action in
+            self.performSegue(withIdentifier: "Back", sender: self)})
         controller.addAction(yesAction)
-        self.present(controller, animated: true, completion: {print("Done")})
+        self.present(controller, animated: true, completion:nil)
     }
 
     
