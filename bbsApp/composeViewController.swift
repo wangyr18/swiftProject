@@ -17,12 +17,10 @@ class composeViewController: UIViewController {
     
     var ref: DatabaseReference!
     
+
     @IBAction func saveButtonAction(_ sender: UIBarButtonItem) {
         ref = Database.database().reference()
         
-//        let category = categoryText.text! as String
-//        let article = myTextView.text
-//        let title = titleText.text
         if categoryText.text! == ""{
             createAlert("Topic catogory is required.")
             return
@@ -38,20 +36,22 @@ class composeViewController: UIViewController {
         else{
             let saveDate = ["id": email, "title": titleText.text!, "article": myTextView.text!, "class": categoryText.text!]
             self.ref.child("users").childByAutoId().setValue(saveDate)
+            _ = UIAlertController(title: "Successfully upload", message: "", preferredStyle: .alert)
+            _ = UIAlertAction(title: "OK", style: .default, handler: {action in
+                self.performSegue(withIdentifier: "Back", sender: self)})
         }
-        
-        createAlert("Sucessfully uploaded.")
+
     }
     
     
     func createAlert(_ warning: String) -> Void{
         let controller = UIAlertController(title: warning, message: "", preferredStyle: .alert)
-        let yesAction = UIAlertAction(title: "OK", style: .default, handler: {action in print("yes")})
-        controller.addAction(yesAction)
-        self.present(controller, animated: true, completion: {print("Done")})
+        let action = UIAlertAction(title: "OK", style: .default, handler: {action in
+            print("Post done!")})
+        controller.addAction(action)
+        self.present(controller, animated: true, completion:nil)
     }
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

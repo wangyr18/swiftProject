@@ -9,8 +9,6 @@
 import UIKit
 import Firebase
 
-let list = ["title1", "title2", "title3", "title3", "title4", "title5", "title6", "title7", "title8"]
-let list1 = ["article1", "article2", "article3", "article3", "article4", "article5", "article6", "article7", "article8"]
 var myIndex = 0
 var postTitles = [String]()
 var postArticles = [String]()
@@ -18,7 +16,6 @@ var userid = [String]()
 
 class tableViewController: UIViewController,UITableViewDelegate, UITableViewDataSource  {
 
-    @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var myTableView: UITableView!
     
     var ref: DatabaseReference!
@@ -44,8 +41,6 @@ class tableViewController: UIViewController,UITableViewDelegate, UITableViewData
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        userNameLabel.text = email
         
         ref = Database.database().reference()
 //        ref.observe(DataEventType.value, with: { (snapshot) in
