@@ -38,9 +38,11 @@ class composeViewController: UIViewController {
         else{
             let saveDate = ["id": email, "title": titleText.text!, "article": myTextView.text!, "class": categoryText.text!, "comments": ""]
             self.ref.child("users").childByAutoId().setValue(saveDate)
+            let controller = UIAlertController(title: "Sucessfully upload", message: "", preferredStyle: .alert)
+            let yesAction = UIAlertAction(title: "OK", style: .default, handler: {action in self.performSegue(withIdentifier: "Back", sender: self)})
+            controller.addAction(yesAction)
+            self.present(controller, animated: true, completion: nil)
         }
-        
-        createAlert("Sucessfully uploaded.")
     }
     
     
@@ -48,7 +50,7 @@ class composeViewController: UIViewController {
         let controller = UIAlertController(title: warning, message: "", preferredStyle: .alert)
         let yesAction = UIAlertAction(title: "OK", style: .default, handler: {action in print("yes")})
         controller.addAction(yesAction)
-        self.present(controller, animated: true, completion: {print("Done")})
+        self.present(controller, animated: true, completion: nil)
     }
 
     

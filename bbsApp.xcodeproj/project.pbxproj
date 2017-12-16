@@ -10,6 +10,7 @@
 		632CE7ACA32FFFBAE5FA50A5 /* Pods_bbsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1A6A98B4D328E2F6B3B90B /* Pods_bbsApp.framework */; };
 		8E3AFF3C1FE34C6600754338 /* MostViewedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3AFF3B1FE34C6600754338 /* MostViewedViewController.swift */; };
 		8E3AFF3E1FE34C8000754338 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3AFF3D1FE34C8000754338 /* MeViewController.swift */; };
+		8E9FA1C01FE4AD930025F1BC /* MostRecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9FA1BF1FE4AD930025F1BC /* MostRecentViewController.swift */; };
 		BD23D0A31FDCB26E0037785E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23D0A21FDCB26E0037785E /* AppDelegate.swift */; };
 		BD23D0A51FDCB26E0037785E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23D0A41FDCB26E0037785E /* ViewController.swift */; };
 		BD23D0A81FDCB26E0037785E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD23D0A61FDCB26E0037785E /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		6C1A6A98B4D328E2F6B3B90B /* Pods_bbsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bbsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E3AFF3B1FE34C6600754338 /* MostViewedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostViewedViewController.swift; sourceTree = "<group>"; };
 		8E3AFF3D1FE34C8000754338 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		8E9FA1BF1FE4AD930025F1BC /* MostRecentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MostRecentViewController.swift; sourceTree = "<group>"; };
 		BD23D09F1FDCB26E0037785E /* bbsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bbsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD23D0A21FDCB26E0037785E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD23D0A41FDCB26E0037785E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,10 +94,10 @@
 			children = (
 				BD23D0A21FDCB26E0037785E /* AppDelegate.swift */,
 				BD23D0A41FDCB26E0037785E /* ViewController.swift */,
+				8E9FA1BF1FE4AD930025F1BC /* MostRecentViewController.swift */,
 				BD23D0B81FDCC6A30037785E /* textViewController.swift */,
 				BDB1A6BD1FDD362D006D3FF6 /* composeViewController.swift */,
 				8E3AFF3B1FE34C6600754338 /* MostViewedViewController.swift */,
-				8E1872B11FE36C2F0047C767 /* MostRecentViewController.swift */,
 				8E3AFF3D1FE34C8000754338 /* MeViewController.swift */,
 				BD4367381FDEFDE700C04CF0 /* commentViewController.swift */,
 				BD23D0A61FDCB26E0037785E /* Main.storyboard */,
@@ -247,6 +249,7 @@
 				8E3AFF3E1FE34C8000754338 /* MeViewController.swift in Sources */,
 				8E3AFF3C1FE34C6600754338 /* MostViewedViewController.swift in Sources */,
 				BDB1A6BE1FDD362D006D3FF6 /* composeViewController.swift in Sources */,
+				8E9FA1C01FE4AD930025F1BC /* MostRecentViewController.swift in Sources */,
 				BD23D0A31FDCB26E0037785E /* AppDelegate.swift in Sources */,
 				BD4367391FDEFDE700C04CF0 /* commentViewController.swift in Sources */,
 				BD23D0B91FDCC6A30037785E /* textViewController.swift in Sources */,
