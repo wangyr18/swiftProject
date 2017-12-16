@@ -95,6 +95,7 @@
 				BD23D0B81FDCC6A30037785E /* textViewController.swift */,
 				BDB1A6BD1FDD362D006D3FF6 /* composeViewController.swift */,
 				8E3AFF3B1FE34C6600754338 /* MostViewedViewController.swift */,
+				8E1872B11FE36C2F0047C767 /* MostRecentViewController.swift */,
 				8E3AFF3D1FE34C8000754338 /* MeViewController.swift */,
 				BD4367381FDEFDE700C04CF0 /* commentViewController.swift */,
 				BD23D0A61FDCB26E0037785E /* Main.storyboard */,
