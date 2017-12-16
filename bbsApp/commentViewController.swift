@@ -24,9 +24,9 @@ class commentViewController: UIViewController, UITextFieldDelegate {
             self.present(controller, animated: true, completion: {print("Done")})
         }
         else{
-            let saveDate = ["comment": commentText.text!]
-            let uid = userid[myIndex]
-            self.ref.child("users").child(uid).setValue(saveDate)
+//            let saveDate = ["comment": commentText.text!]
+//            let uid = userid[myIndex]
+//            self.ref.child("users").child(uid).setValue(saveDate)
         }
     }
     
