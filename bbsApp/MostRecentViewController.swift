@@ -22,6 +22,19 @@ class MostRecentViewController: UIViewController,UITableViewDelegate, UITableVie
     
     var ref: DatabaseReference!
     
+    @IBAction func signOutAction(_ sender: UIBarButtonItem) {
+        do{
+            try? Auth.auth().signOut()
+            if Auth.auth().currentUser == nil{
+                let logout = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! ViewController
+                self.present(logout, animated: true, completion: nil)
+            }
+        }
+//        catch let error as NSError{
+//            print(error.localizedDescription)
+//        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return postTitles.count
         //        return list.count

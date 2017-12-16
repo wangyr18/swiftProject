@@ -17,69 +17,83 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordText: UITextField!
     
     @IBAction func signupFunc() {
-        performSegue(withIdentifier: "sign up", sender: self)
+        self.emailText.resignFirstResponder()
+        self.passwordText.resignFirstResponder()
+        email = emailText.text!
+        if email == ""{
+            createAlert("Please enter your email address!")
+            return
+        }
+        else if passwordText.text! == ""{
+            createAlert("Please enter your password")
+            return
+        }
+        else if passwordText.text!.count < 4{
+            createAlert("Password should have more than 3 characters!")
+            return
+        }
+        else{
+            Auth.auth().createUser(withEmail: email!, password: passwordText.text!, completion: { (user, error) in
+                if let Error = error{
+                    print(Error.localizedDescription)
+                    self.createAlert(Error.localizedDescription)
+                }
+                else{
+                    self.performSegue(withIdentifier: "guset", sender: self)
+                }
+            })
+        }
+//        performSegue(withIdentifier: "sign up", sender: self)
     }
-    @IBAction func loginFunc() {
-        performSegue(withIdentifier: "login", sender: self)
+    
+    @IBAction func loginAction() {
+        self.emailText.resignFirstResponder()
+        self.passwordText.resignFirstResponder()
+        email = emailText.text!
+        
+        if email == ""{
+            createAlert("Please enter your email address!")
+            return
+            }
+        else if passwordText.text! == ""{
+            createAlert("Please enter your password")
+            return
+            }
+        else if passwordText.text!.count < 4{
+            createAlert("Password should have more than 3 characters!")
+            return
+            }
+        else{
+            Auth.auth().signIn(withEmail: email!, password: passwordText.text!, completion: { (user, error) in
+                if let Error = error{
+                    print(Error.localizedDescription)
+                    self.createAlert("The username is not exist! Please register!")
+                }
+                else{
+                    self.performSegue(withIdentifier: "guest", sender: self)
+                }
+            })
+        }
     }
     @IBAction func guestloginFunc() {
         performSegue(withIdentifier: "guest", sender: self)
     }
     
     
-//    @IBAction func submitButtonAction() {
-//        email = emailText.text
-//        if email == ""{
-//            createAlert("Please enter your email address!")
-//            return
-//        }
-//        else if passwordText.text! == ""{
-//            createAlert("Please enter your password")
-//            return
-//        }
-//        else if passwordText.text!.count < 4{
-//            createAlert("Password should have more than 3 characters!")
-//            return
-//        }
-//        else{
-//            switch (mySegmentControl.selectedSegmentIndex){
-//            case 0:
-//                Auth.auth().signIn(withEmail: email!, password: passwordText.text!, completion: { (user, error) in
-//                    if user != nil{
-//
-//                    }
-//                    else{
-//
-//                    }
-//                })
-//            case 1:
-//                Auth.auth().createUser(withEmail: email!, password: passwordText.text!, completion: { (user, error) in
-//                    if user != nil{
-//
-//                    }
-//                    else{
-//                    }
-//                })
-//            default:
-//                return
-//            }
-//        }
-//    }
-    
-//    @IBAction func guestButtonAction() {
-//        email = "Guest"
-//    }
     
     func createAlert(_ warning: String) -> Void{
         let controller = UIAlertController(title: warning, message: "", preferredStyle: .alert)
         let yesAction = UIAlertAction(title: "OK", style: .default, handler: {action in print("yes")})
         controller.addAction(yesAction)
         self.present(controller, animated: true, completion: {print("Done")})
+        emailText.text = ""
+        passwordText.text = ""
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        view.backgroundColor = UIColor(red: 61/255, green: 151/255, blue: 91/255, alpha: 1)
     }
 
     override func didReceiveMemoryWarning() {

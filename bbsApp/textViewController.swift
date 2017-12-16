@@ -11,6 +11,7 @@ import Firebase
 
 class textViewController: UIViewController {
 
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var myTextView: UITextView!
     @IBOutlet weak var authorLabel: UILabel!
