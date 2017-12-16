@@ -97,6 +97,7 @@
 				BD23D0B81FDCC6A30037785E /* textViewController.swift */,
 				BDB1A6BD1FDD362D006D3FF6 /* composeViewController.swift */,
 				8E3AFF3B1FE34C6600754338 /* MostViewedViewController.swift */,
+				8E1872B11FE36C2F0047C767 /* MostRecentViewController.swift */,
 				8E3AFF3D1FE34C8000754338 /* MeViewController.swift */,
 				BD4367381FDEFDE700C04CF0 /* commentViewController.swift */,
 				BD23D0A61FDCB26E0037785E /* Main.storyboard */,
@@ -104,7 +105,6 @@
 				BD23D0AB1FDCB26E0037785E /* LaunchScreen.storyboard */,
 				BD23D0AE1FDCB26E0037785E /* Info.plist */,
 				BD23D0B41FDCB2EB0037785E /* GoogleService-Info.plist */,
-				8E1872B11FE36C2F0047C767 /* MostRecentViewController.swift */,
 			);
 			path = bbsApp;
 			sourceTree = "<group>";
