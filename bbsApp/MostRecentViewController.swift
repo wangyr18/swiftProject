@@ -11,6 +11,7 @@ import Firebase
 
 var myIndex = 0
 var postTitles = [String]()
+//var postTitles: NSString?
 var postArticles = [String]()
 var userid = [String]()
 
@@ -58,22 +59,65 @@ class MostRecentViewController: UIViewController,UITableViewDelegate, UITableVie
         // Do any additional setup after loading the view.
         
         ref = Database.database().reference()
+        print("i am back")
+//        postTitles.removeAll()
+//        postArticles.removeAll()
         
-        postTitles.removeAll()
-        postArticles.removeAll()
+//        let test = ref.child("users").observe(DataEventType.value) { (snapchat) in
+////            print(snapchat.value)
+//            if let userdic = snapchat.value as? NSDictionary{
+////                print(userdic.allKeys)
+//                userid = userdic.allKeys as! [String]
+//                print(userid)
+//                if let datadic = userdic.allValues as? NSDictionary{
+//                    print(datadic)
+//                }
+//            }
+        
+            
+            
+//            if let dict = snapchat.value as? [String: String]{
+//                //                postTitles.removeAll()
+//                //                postArticles.removeAll()
+//
+//                postTitles.append(dict["title"]!)
+//                postArticles.append(dict["article"]!)
+//                userid.append(snapchat.key)
+//                print("i am in")
+//                DispatchQueue.main.async {
+//                    self.myTableView.reloadData()
+//                }
+//            }
+//        }
+//        print(test)
+        
+        
+        
         ref.child("users").observe(.childAdded) { (snapchat) in
-            if let dict = snapchat.value as? [String: String]{
-                //                print(dict)
-                postTitles.append(dict["title"]!)
-                postArticles.append(dict["article"]!)
-                userid.append(snapchat.key)
-                DispatchQueue.main.async {
-                    self.myTableView.reloadData()
-                }
+            if let dict = snapchat.value as? NSDictionary{
+//                print(dict["title"])
+                let temTitles = dict["title"] as? NSString
+                postTitles.append(temTitles! as String)
+                print(postTitles)
             }
+            
+//            if let dict = snapchat.value as? [String: String]{
+////                postTitles.removeAll()
+////                postArticles.removeAll()
+//                print(dict)
+//                postTitles.append(dict["title"]!)
+//                postArticles.append(dict["article"]!)
+////                userid.append(snapchat.key)
+//                print("i am in")
+//                print(postTitles)
+//                DispatchQueue.main.async {
+//                    self.myTableView.reloadData()
+//                }
+//            }
         }
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
