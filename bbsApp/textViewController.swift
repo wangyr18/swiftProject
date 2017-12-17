@@ -23,7 +23,7 @@ class textViewController: UIViewController {
         titleLabel.text = postTitles[myIndex]
         myTextView.text = postArticles[myIndex]
 //        authorLabel.text = Auth.auth().currentUser?.uid
-        authorLabel.text = userid[myIndex]
+        authorLabel.text = author[myIndex]
     }
 
     override func didReceiveMemoryWarning() {

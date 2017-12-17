@@ -1,20 +1,18 @@
 //
-//  MeViewController.swift
+//  MyPostsViewController.swift
 //  bbsApp
 //
-//  Created by Yu Ma on 12/14/17.
+//  Created by Yu Ma on 12/16/17.
 //  Copyright © 2017 Yanrui Wang. All rights reserved.
 //
 
 import UIKit
 
-class MeViewController: UIViewController {
+class MyPostsViewController: UIViewController {
 
-    @IBOutlet weak var username: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 210/255, green: 198/255, blue: 148/255, alpha: 1)
-        username.text = email!
         // Do any additional setup after loading the view.
     }
 

@@ -14,6 +14,7 @@ var postTitles = [String]()
 //var postTitles: NSString?
 var postArticles = [String]()
 var userid = [String]()
+var author = [String]()
 
 
 class MostRecentViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
@@ -43,6 +44,7 @@ class MostRecentViewController: UIViewController,UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style:UITableViewCellStyle.default, reuseIdentifier:"cell")
+        cell.backgroundColor = UIColor(red: 210/255, green: 198/255, blue: 148/255, alpha: 1)
         cell.textLabel?.text = postTitles[indexPath.row]
         
         return cell

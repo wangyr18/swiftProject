@@ -30,7 +30,7 @@ class commentViewController: UIViewController, UITextFieldDelegate,UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style:UITableViewCellStyle.default, reuseIdentifier:"cell")
-//        cell.textLabel?.text = myComments![indexPath.row]
+        cell.backgroundColor = UIColor(red: 210/255, green: 198/255, blue: 148/255, alpha: 1)
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         cell.textLabel?.text = showComments[indexPath.row]
@@ -74,7 +74,7 @@ class commentViewController: UIViewController, UITextFieldDelegate,UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = UIColor(red: 210/255, green: 198/255, blue: 148/255, alpha: 1)
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
