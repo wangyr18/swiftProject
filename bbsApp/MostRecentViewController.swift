@@ -58,7 +58,7 @@ class MostRecentViewController: UIViewController,UITableViewDelegate, UITableVie
         // Do any additional setup after loading the view.
         
         ref = Database.database().reference()
-        
+        myTableView.backgroundColor = UIColor(red: 210/255, green: 198/255, blue: 148/255, alpha: 1)
         postTitles.removeAll()
         postArticles.removeAll()
         ref.child("users").observe(.childAdded) { (snapchat) in

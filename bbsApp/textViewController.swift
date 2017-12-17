@@ -19,7 +19,7 @@ class textViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        view.backgroundColor = UIColor(red: 210/255, green: 198/255, blue: 148/255, alpha: 1)
         titleLabel.text = postTitles[myIndex]
         myTextView.text = postArticles[myIndex]
 //        authorLabel.text = Auth.auth().currentUser?.uid
