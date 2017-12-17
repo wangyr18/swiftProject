@@ -67,7 +67,7 @@ class ViewController: UIViewController {
             Auth.auth().signIn(withEmail: email!, password: passwordText.text!, completion: { (user, error) in
                 if let Error = error{
                     print(Error.localizedDescription)
-                    self.createAlert("The username is not exist! Please register!")
+                    self.createAlert(Error.localizedDescription)
                 }
                 else{
                     self.performSegue(withIdentifier: "guest", sender: self)
@@ -76,6 +76,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func guestloginFunc() {
+        email = "Guest"
         performSegue(withIdentifier: "guest", sender: self)
     }
     

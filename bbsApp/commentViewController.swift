@@ -79,8 +79,9 @@ class commentViewController: UIViewController, UITextFieldDelegate,UITableViewDe
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
         ref = Database.database().reference()
-        uid = userid[myIndex]
+//        uid = userid[myIndex]
         self.showComments.removeAll()
+        print(uid)
         ref.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapchat) in
             if let dict = snapchat.value as? [String: Any]{
                 print(dict)

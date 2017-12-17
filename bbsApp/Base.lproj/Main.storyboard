@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -149,8 +149,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="yfY-qX-7ON" id="gAQ-cY-27f"/>
-                                    <outlet property="delegate" destination="yfY-qX-7ON" id="6YI-9d-xlE"/>
+                                    <outlet property="dataSource" destination="BBK-tr-Hag" id="1ii-93-Gr4"/>
+                                    <outlet property="delegate" destination="BBK-tr-Hag" id="zwQ-sF-u0G"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -257,8 +257,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="yfY-qX-7ON" id="7H9-BE-bRb"/>
-                                    <outlet property="delegate" destination="yfY-qX-7ON" id="EoH-l2-6jK"/>
+                                    <outlet property="dataSource" destination="mhg-Zb-0gc" id="zlF-ek-mnN"/>
+                                    <outlet property="delegate" destination="mhg-Zb-0gc" id="MCR-Gz-ksm"/>
                                 </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiB-NF-nTY">
@@ -283,6 +283,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7Qq-Nf-GAh"/>
                     </view>
+                    <connections>
+                        <outlet property="myTableView" destination="UDm-Jg-a2H" id="gA3-M7-tcb"/>
+                        <segue destination="54z-o2-1Rx" kind="show" identifier="myPost" id="lem-zY-Wfg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZzS-yA-7qM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -335,14 +339,18 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="yfY-qX-7ON" id="ZH4-hk-Pk7"/>
-                                    <outlet property="delegate" destination="yfY-qX-7ON" id="vJv-9P-DFC"/>
+                                    <outlet property="dataSource" destination="Znl-9q-D8y" id="JlM-a4-kUr"/>
+                                    <outlet property="delegate" destination="Znl-9q-D8y" id="166-Qw-EMR"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="c3x-Qj-Uq0"/>
                     </view>
+                    <connections>
+                        <outlet property="myTableView" destination="lBk-yg-4Ft" id="Cmx-yr-XIA"/>
+                        <segue destination="54z-o2-1Rx" kind="show" identifier="myLike" id="hx1-8x-vRp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhG-ad-nyo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -395,10 +403,6 @@
                                         <color key="backgroundColor" red="0.82352941180000006" green="0.77647058820000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="yfY-qX-7ON" id="6FP-0A-c6y"/>
-                                    <outlet property="delegate" destination="yfY-qX-7ON" id="9kQ-oc-ITA"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -581,12 +585,16 @@
                                 <items>
                                     <barButtonItem title="Like" id="07S-w8-5cy">
                                         <color key="tintColor" red="0.82352941180000006" green="0.77647058820000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="likeAction:" destination="54z-o2-1Rx" id="V2a-x5-Zxu"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="afM-cs-fTz"/>
                                     <barButtonItem title="Comment" id="gqS-dg-jRa">
                                         <color key="tintColor" red="0.82352941180000006" green="0.77647058820000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
-                                            <segue destination="tFE-eq-aEI" kind="show" id="Smq-FT-ucN"/>
+                                            <action selector="commentAction:" destination="54z-o2-1Rx" id="g6a-i4-McC"/>
+                                            <segue destination="tFE-eq-aEI" kind="show" identifier="comment" id="Smq-FT-ucN"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -607,7 +615,13 @@
                                     <barButtonItem title="Back" id="tEZ-ZA-XL2">
                                         <color key="tintColor" red="0.76862745099999996" green="0.070588235289999995" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
-                                            <segue destination="kPm-93-UdI" kind="show" id="bnp-wx-mdt"/>
+                                            <segue destination="kPm-93-UdI" kind="show" identifier="back" id="bnp-wx-mdt"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="iJt-HD-SnR"/>
+                                    <barButtonItem systemItem="trash" id="je9-24-Cc1">
+                                        <connections>
+                                            <action selector="deleteAction:" destination="54z-o2-1Rx" id="jJ9-hj-YFF"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -741,7 +755,7 @@
         <image name="1" width="2040" height="1811"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zdf-UV-Spr"/>
-        <segue reference="4Cr-ty-ax2"/>
+        <segue reference="hx1-8x-vRp"/>
+        <segue reference="bnp-wx-mdt"/>
     </inferredMetricsTieBreakers>
 </document>
