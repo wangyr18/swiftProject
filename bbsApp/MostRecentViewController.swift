@@ -13,6 +13,7 @@ var myIndex = 0
 var postTitles = [String]()
 var postArticles = [String]()
 var userid = [String]()
+var author = [String]()
 
 
 class MostRecentViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
@@ -42,6 +43,7 @@ class MostRecentViewController: UIViewController,UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style:UITableViewCellStyle.default, reuseIdentifier:"cell")
+        cell.backgroundColor = UIColor(red: 210/255, green: 198/255, blue: 148/255, alpha: 1)
         cell.textLabel?.text = postTitles[indexPath.row]
         
         return cell
@@ -58,15 +60,25 @@ class MostRecentViewController: UIViewController,UITableViewDelegate, UITableVie
         // Do any additional setup after loading the view.
         
         ref = Database.database().reference()
-        myTableView.backgroundColor = UIColor(red: 210/255, green: 198/255, blue: 148/255, alpha: 1)
+        view.backgroundColor = UIColor(red: 210/255, green: 198/255, blue: 148/255, alpha: 1)
         postTitles.removeAll()
         postArticles.removeAll()
+        
         ref.child("users").observe(.childAdded) { (snapchat) in
-            if let dict = snapchat.value as? [String: String]{
-                //                print(dict)
-                postTitles.append(dict["title"]!)
-                postArticles.append(dict["article"]!)
-                userid.append(snapchat.key)
+            if let userdict = snapchat.key as? NSString{
+                userid.append(userdict as String)
+                print(userid)
+            }
+            if let dict = snapchat.value as? NSDictionary{
+                let temTitle = dict["title"] as? NSString
+                postTitles.append(temTitle! as String)
+                let temArticle = dict["article"] as? NSString
+                postArticles.append(temArticle! as String)
+                let temAuther = dict["id"] as? NSString
+                author.append(temAuther! as String)
+//                postTitles.append(dict["title"]!)
+//                postArticles.append(dict["article"]!)
+//                userid.append(snapchat.key)
                 DispatchQueue.main.async {
                     self.myTableView.reloadData()
                 }

@@ -56,7 +56,7 @@ class composeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = UIColor(red: 210/255, green: 198/255, blue: 148/255, alpha: 1)
         // Do any additional setup after loading the view.
     }
 
