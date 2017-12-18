@@ -512,6 +512,7 @@
                     </view>
                     <connections>
                         <outlet property="authorLabel" destination="KKz-aH-YyX" id="ggV-NV-4M4"/>
+                        <outlet property="likeButtom" destination="07S-w8-5cy" id="GNf-ZI-sra"/>
                         <outlet property="myTextView" destination="DwV-cj-NWZ" id="8w7-1r-gKq"/>
                         <outlet property="titleLabel" destination="nvw-jv-q0v" id="ZZT-hK-EjK"/>
                     </connections>
@@ -627,7 +628,8 @@
         <image name="1" width="2040" height="1811"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lem-zY-Wfg"/>
+        <segue reference="amD-r5-1yF"/>
+        <segue reference="zdf-UV-Spr"/>
         <segue reference="bnp-wx-mdt"/>
     </inferredMetricsTieBreakers>
 </document>

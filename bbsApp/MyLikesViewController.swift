@@ -55,15 +55,7 @@ class MyLikesViewController: UIViewController, UITableViewDelegate, UITableViewD
                 let temUser = dict["user"] as? NSString
                 let temU = temUser! as String
                 if temU == email!{
-//                    self.users.append(temU)
                     self.titles.append(temT)
-//                    print(postTitles)
-//                    for i in 0 ..< allTitles.count{
-//                        if temT == allTitles[i]{
-//                            print(userid[i])
-//                            self.likeId.append(userid[i])
-//                        }
-//                    }
                 }
                 DispatchQueue.main.async {
                     self.myTableView.reloadData()

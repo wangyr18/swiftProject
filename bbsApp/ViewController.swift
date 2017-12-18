@@ -39,7 +39,7 @@ class ViewController: UIViewController {
                     self.createAlert(Error.localizedDescription)
                 }
                 else{
-                    self.performSegue(withIdentifier: "guset", sender: self)
+                    self.performSegue(withIdentifier: "guest", sender: self)
                 }
             })
         }

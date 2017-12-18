@@ -12,17 +12,21 @@ import Firebase
 class textViewController: UIViewController {
 
     var ref: DatabaseReference!
-    var myId:String?
-    var myTitle:String?
-    var myArticle:String?
+//    var myId:String?
+//    var myTitle:String?
+//    var myArticle:String?
+    var titles = [String]()
+    var exist:Bool = false
+    var likeId:String?
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var myTextView: UITextView!
     @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var likeButtom: UIBarButtonItem!
     
     @IBAction func commentAction(_ sender: UIBarButtonItem) {
-        let tem = uid!
-        uid = tem
+//        let tem = uid!
+//        uid = tem
         performSegue(withIdentifier: "comment", sender: self)
     }
     @IBAction func deleteAction(_ sender: UIBarButtonItem) {
@@ -44,10 +48,24 @@ class textViewController: UIViewController {
     
     @IBAction func likeAction(_ sender: UIBarButtonItem) {
         ref = Database.database().reference()
-        let saveDate = ["user": email, "title": titleLabel.text!]
-//        saveDate.updateValue(titleLabel.text!, forKey: email!)
-        print(saveDate)
-        self.ref.child("likes").childByAutoId().setValue(saveDate)
+//        for i in 0 ..< titles.count{
+//            if titleLabel.text! == titles[i]{
+//                exist = true
+//                break
+//            }
+//        }
+        if exist == false{
+            let saveDate = ["user": email, "title": titleLabel.text!]
+            //        saveDate.updateValue(titleLabel.text!, forKey: email!)
+            print(saveDate)
+            ref.child("likes").childByAutoId().setValue(saveDate)
+            likeButtom.title = "Unlike"
+        }
+        else{
+            ref.child("likes").child(likeId!).removeValue()
+            likeButtom.title = "Like"
+            exist = false
+        }
     }
     
     override func viewDidLoad() {
@@ -58,7 +76,7 @@ class textViewController: UIViewController {
 //        myTextView.text = postArticles[myIndex]
 ////        authorLabel.text = Auth.auth().currentUser?.uid
 //        authorLabel.text = author[myIndex]
-        
+        var i:Int = 0
         ref = Database.database().reference()
         
         ref.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapchat) in
@@ -73,6 +91,32 @@ class textViewController: UIViewController {
                 
             }
         })
+        
+        ref.child("likes").observe(.childAdded) { (snapchat) in
+//            if let userdict = snapchat.key as? NSString{
+//                self.likeId.append(userdict as String)
+//                //                print(userid)
+//            }
+            if let dict = snapchat.value as? NSDictionary{
+                let temTitle = dict["title"] as? NSString
+                let temT = temTitle! as String
+                //                self.titles.append(temT)
+                let temUser = dict["user"] as? NSString
+                let temU = temUser! as String
+                if temU == email!{
+//                    self.likeId.remove(at: i)
+                    self.titles.append(temT)
+                    if temT == self.titleLabel.text!{
+                        print("same")
+                        self.exist = true
+                        self.likeButtom.title = "Unlike"
+                        self.likeId = snapchat.key
+                    }
+                }
+                i += 1
+                print(self.likeId)
+            }
+        }
         
     }
 
