@@ -16,7 +16,7 @@ class commentViewController: UIViewController, UITextFieldDelegate,UITableViewDe
     @IBOutlet weak var myTableView: UITableView!
     var ref: DatabaseReference!
     
-    var uid: String?
+//    var uid: String?
     var myId: String?
     var myClass:String?
     var myTitle: String?
