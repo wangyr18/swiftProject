@@ -33,9 +33,9 @@ class MostRecentViewController: UIViewController,UITableViewDelegate, UITableVie
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! textViewController
-        destination.segueFromController = "MostRecentViewController";
-        
+        if let destination = segue.destination as? textViewController{
+            destination.segueFromController = "MostRecentViewController";
+        }
     }
     
 
