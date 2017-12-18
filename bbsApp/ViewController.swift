@@ -39,7 +39,7 @@ class ViewController: UIViewController {
                     self.createAlert(Error.localizedDescription)
                 }
                 else{
-                    self.performSegue(withIdentifier: "guest", sender: self)
+                    self.performSegue(withIdentifier: "login", sender: self)
                 }
             })
         }
@@ -70,16 +70,12 @@ class ViewController: UIViewController {
                     self.createAlert(Error.localizedDescription)
                 }
                 else{
-                    self.performSegue(withIdentifier: "guest", sender: self)
+                    self.performSegue(withIdentifier: "login", sender: self)
                 }
             })
         }
     }
-    @IBAction func guestloginFunc() {
-        email = "Guest"
-        performSegue(withIdentifier: "guest", sender: self)
-    }
-    
+
     
     
     func createAlert(_ warning: String) -> Void{

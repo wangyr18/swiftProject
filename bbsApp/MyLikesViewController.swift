@@ -56,7 +56,7 @@ class MyLikesViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 210/255, green: 198/255, blue: 148/255, alpha: 1)
         // Do any additional setup after loading the view.
-        
+        titles.removeAll()
         ref = Database.database().reference()
         ref.child("likes").observe(.childAdded) { (snapchat) in
             if let dict = snapchat.value as? NSDictionary{
@@ -66,7 +66,9 @@ class MyLikesViewController: UIViewController, UITableViewDelegate, UITableViewD
                 let temUser = dict["user"] as? NSString
                 let temU = temUser! as String
                 if temU == email!{
+//                    self.users.append(temU)
                     self.titles.append(temT)
+//
                 }
                 DispatchQueue.main.async {
                     self.myTableView.reloadData()
