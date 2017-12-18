@@ -16,6 +16,7 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var myTableView: UITableView!
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currentTitle.count
         //        return list.count

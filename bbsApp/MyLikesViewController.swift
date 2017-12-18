@@ -18,6 +18,7 @@ class MyLikesViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var myTableView: UITableView!
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titles.count
         //        return list.count

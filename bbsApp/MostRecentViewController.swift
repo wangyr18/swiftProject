@@ -22,11 +22,15 @@ var uid: String?
 
 class MostRecentViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
-   
+    
     @IBOutlet weak var myTableView: UITableView!
     
     var ref: DatabaseReference!
     
+    @IBAction func backToMostRecent(_sender: UIStoryboardSegue){
+        print("back to MostRecent controller")
+    }
+
     @IBAction func signOutAction(_ sender: UIBarButtonItem) {
         do{
             try? Auth.auth().signOut()

@@ -20,6 +20,25 @@ class textViewController: UIViewController {
     @IBOutlet weak var myTextView: UITextView!
     @IBOutlet weak var authorLabel: UILabel!
     
+    
+    var segueFromController : String!
+    
+    @IBAction func unwind(_ sender: UIBarButtonItem) {
+        print(segueFromController)
+        if segueFromController == "MostRecentViewController"{
+            self.performSegue(withIdentifier: "BackToMostRecent", sender: self)
+        }
+        else if segueFromController == "MyPostsViewController"{
+            self.performSegue(withIdentifier: "BackToMyPosts", sender: self)
+            
+        }
+        else if segueFromController == "MyLikesViewController"{
+            self.performSegue(withIdentifier: "BackToMyLikes", sender: self)
+        }
+    }
+    @IBAction func backToTextView(_sender: UIStoryboardSegue){
+        print("back to TextView controller")
+    }
     @IBAction func commentAction(_ sender: UIBarButtonItem) {
         let tem = uid!
         uid = tem
