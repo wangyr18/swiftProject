@@ -22,11 +22,23 @@ var uid: String?
 
 class MostRecentViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
-   
+    
     @IBOutlet weak var myTableView: UITableView!
     
     var ref: DatabaseReference!
     
+    
+    @IBAction func backToMostRecentViewController(_sender: UIStoryboardSegue){
+        print("Back to Home")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! textViewController
+        destination.segueFromController = "MostRecentViewController";
+        
+    }
+    
+
     @IBAction func signOutAction(_ sender: UIBarButtonItem) {
         do{
             try? Auth.auth().signOut()

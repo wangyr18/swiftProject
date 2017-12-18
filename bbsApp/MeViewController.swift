@@ -10,6 +10,9 @@ import UIKit
 
 class MeViewController: UIViewController {
 
+    @IBAction func backToMe(_sender: UIStoryboardSegue){
+        print("back to Me controller")
+    }
     @IBOutlet weak var username: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -18,6 +18,17 @@ class MyLikesViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var myTableView: UITableView!
     
+    @IBAction func backToMyLikesViewController(_sender: UIStoryboardSegue){
+        print("Back to MyLikes")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? textViewController{
+            destination.segueFromController = "MyLikesViewController"
+        }
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titles.count
         //        return list.count
