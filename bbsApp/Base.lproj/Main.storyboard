@@ -56,18 +56,6 @@
                                     <action selector="loginAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="HqR-HX-Bao"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ga0-fd-HdR">
-                                <rect key="frame" x="127" y="578" width="121" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.82352941180000006" green="0.77647058820000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Log in as Guest">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="guestloginFunc" destination="BYZ-38-t0r" eventType="touchUpInside" id="bIW-tt-bh2"/>
-                                    <segue destination="kPm-93-UdI" kind="show" identifier="guest" id="HE0-Md-The"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uaE-dl-VOG">
                                 <rect key="frame" x="127" y="444" width="121" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -105,13 +93,14 @@
                     <connections>
                         <outlet property="emailText" destination="00J-og-JrS" id="246-A6-eoE"/>
                         <outlet property="passwordText" destination="dxF-uN-SvO" id="KPo-Lg-2WJ"/>
+                        <segue destination="kPm-93-UdI" kind="show" identifier="login" id="eSC-6h-L3i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4319.1999999999998" y="315.29235382308849"/>
         </scene>
-        <!--Me-->
+        <!--My Account-->
         <scene sceneID="nYE-36-yNZ">
             <objects>
                 <viewController id="JWh-II-Dmp" customClass="MeViewController" customModule="bbsApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -152,7 +141,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5Zx-KO-Wy5"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Me" id="hie-Uh-39w">
+                    <tabBarItem key="tabBarItem" title="My Account" id="hie-Uh-39w">
                         <color key="badgeColor" red="0.82352941180000006" green="0.77647058820000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <connections>
@@ -293,7 +282,7 @@
             </objects>
             <point key="canvasLocation" x="-1677.5999999999999" y="2023.5382308845578"/>
         </scene>
-        <!--Most Recent-->
+        <!--Most Recent View Controller-->
         <scene sceneID="X6p-oE-qSu">
             <objects>
                 <viewController id="yfY-qX-7ON" customClass="MostRecentViewController" customModule="bbsApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -361,7 +350,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JOI-yU-cBa"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Most Recent" id="b1m-C7-tVU">
+                    <tabBarItem key="tabBarItem" systemItem="mostRecent" id="b1m-C7-tVU">
                         <color key="badgeColor" red="0.82352941180000006" green="0.77647058820000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <connections>
@@ -522,6 +511,7 @@
                     </view>
                     <connections>
                         <outlet property="authorLabel" destination="KKz-aH-YyX" id="ggV-NV-4M4"/>
+                        <outlet property="likeButton" destination="07S-w8-5cy" id="YG8-2C-HeD"/>
                         <outlet property="myTextView" destination="DwV-cj-NWZ" id="8w7-1r-gKq"/>
                         <outlet property="titleLabel" destination="nvw-jv-q0v" id="ZZT-hK-EjK"/>
                         <segue destination="tKB-df-yu4" kind="unwind" identifier="BackToMostRecent" unwindAction="backToMostRecentViewControllerWith_sender:" id="Azh-nf-GHT"/>
@@ -642,6 +632,6 @@
         <image name="1" width="2040" height="1811"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hx1-8x-vRp"/>
+        <segue reference="zdf-UV-Spr"/>
     </inferredMetricsTieBreakers>
 </document>

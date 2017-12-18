@@ -48,6 +48,7 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 210/255, green: 198/255, blue: 148/255, alpha: 1)
         // Do any additional setup after loading the view.
+        currentTitle.removeAll()
         ref = Database.database().reference()
         for i in 0 ..< currentUserId.count{
             let uid = currentUserId[i]
