@@ -27,9 +27,17 @@ class MostRecentViewController: UIViewController,UITableViewDelegate, UITableVie
     
     var ref: DatabaseReference!
     
-    @IBAction func backToMostRecent(_sender: UIStoryboardSegue){
-        print("back to MostRecent controller")
+    
+    @IBAction func backToMostRecentViewController(_sender: UIStoryboardSegue){
+        print("Back to Home")
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! textViewController
+        destination.segueFromController = "MostRecentViewController";
+        
+    }
+    
 
     @IBAction func signOutAction(_ sender: UIBarButtonItem) {
         do{

@@ -24,7 +24,6 @@ class textViewController: UIViewController {
     var segueFromController : String!
     
     @IBAction func unwind(_ sender: UIBarButtonItem) {
-        print(segueFromController)
         if segueFromController == "MostRecentViewController"{
             self.performSegue(withIdentifier: "BackToMostRecent", sender: self)
         }

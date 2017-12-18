@@ -208,7 +208,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="0Rt-DG-NTO">
                                             <color key="tintColor" red="0.76862745099999996" green="0.070588235289999995" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
-                                                <segue destination="dEk-mX-X81" kind="unwind" unwindAction="backToMeWith_sender:" id="9NU-AW-jmb"/>
+                                                <segue destination="dEk-mX-X81" kind="unwind" identifier="MyPostsToMe" unwindAction="backToMeWith_sender:" id="9NU-AW-jmb"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -248,7 +248,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="EwX-I8-M6f">
                                             <color key="tintColor" red="0.76862745099999996" green="0.070588235289999995" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
-                                                <segue destination="iKN-ZK-JhX" kind="unwind" unwindAction="backToMeWith_sender:" id="oro-Y1-H6t"/>
+                                                <segue destination="iKN-ZK-JhX" kind="unwind" identifier="MyLikesToMe" unwindAction="backToMeWith_sender:" id="oro-Y1-H6t"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -496,12 +496,12 @@
                                     <barButtonItem title="Back" id="tEZ-ZA-XL2">
                                         <color key="tintColor" red="0.76862745099999996" green="0.070588235289999995" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
-                                            <action selector="unwind:" destination="54z-o2-1Rx" id="r3c-as-1Fr"/>
-                                            <segue destination="tKB-df-yu4" kind="unwind" unwindAction="backToMostRecentWith_sender:" id="akE-lH-SZZ"/>
+                                            <action selector="unwind:" destination="54z-o2-1Rx" id="n0P-xT-Dpm"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="iJt-HD-SnR"/>
                                     <barButtonItem systemItem="trash" id="je9-24-Cc1">
+                                        <color key="tintColor" red="0.76862745099999996" green="0.070588235289999995" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="deleteAction:" destination="54z-o2-1Rx" id="jJ9-hj-YFF"/>
                                         </connections>
@@ -524,6 +524,9 @@
                         <outlet property="authorLabel" destination="KKz-aH-YyX" id="ggV-NV-4M4"/>
                         <outlet property="myTextView" destination="DwV-cj-NWZ" id="8w7-1r-gKq"/>
                         <outlet property="titleLabel" destination="nvw-jv-q0v" id="ZZT-hK-EjK"/>
+                        <segue destination="tKB-df-yu4" kind="unwind" identifier="BackToMostRecent" unwindAction="backToMostRecentViewControllerWith_sender:" id="Azh-nf-GHT"/>
+                        <segue destination="tKB-df-yu4" kind="unwind" identifier="BackToMyLikes" unwindAction="backToMyLikesViewControllerWith_sender:" id="eb0-do-xMI"/>
+                        <segue destination="tKB-df-yu4" kind="unwind" identifier="BackToMyPosts" unwindAction="backToMyPostsViewControllerWith_sender:" id="Saz-TJ-LIb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qEK-50-jJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -639,6 +642,6 @@
         <image name="1" width="2040" height="1811"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lem-zY-Wfg"/>
+        <segue reference="hx1-8x-vRp"/>
     </inferredMetricsTieBreakers>
 </document>

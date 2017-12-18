@@ -16,6 +16,15 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var myTableView: UITableView!
     
+    @IBAction func backToMyPostsViewController(_sender: UIStoryboardSegue){
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? textViewController{
+            destination.segueFromController = "MyPostsViewController"
+        }
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currentTitle.count
