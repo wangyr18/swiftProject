@@ -100,7 +100,7 @@
             </objects>
             <point key="canvasLocation" x="-4319.1999999999998" y="315.29235382308849"/>
         </scene>
-        <!--My Account-->
+        <!--Me View Controller-->
         <scene sceneID="nYE-36-yNZ">
             <objects>
                 <viewController id="JWh-II-Dmp" customClass="MeViewController" customModule="bbsApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -141,7 +141,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5Zx-KO-Wy5"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Account" id="hie-Uh-39w">
+                    <tabBarItem key="tabBarItem" selectedImage=" " id="hie-Uh-39w">
                         <color key="badgeColor" red="0.82352941180000006" green="0.77647058820000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <connections>
@@ -426,6 +426,7 @@
                         <outlet property="categoryText" destination="3mU-Gd-7Kk" id="Xzq-vn-Hgc"/>
                         <outlet property="myTextView" destination="rd2-fa-Jni" id="jby-fR-Kme"/>
                         <outlet property="titleText" destination="7gg-SB-ZsQ" id="l6M-Jg-RxD"/>
+                        <segue destination="kPm-93-UdI" kind="show" identifier="Back" id="Z4R-MX-148"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="beO-cp-4zz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -629,9 +630,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name=" " width="16" height="16"/>
         <image name="1" width="2040" height="1811"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="zdf-UV-Spr"/>
+        <segue reference="Z4R-MX-148"/>
     </inferredMetricsTieBreakers>
 </document>
