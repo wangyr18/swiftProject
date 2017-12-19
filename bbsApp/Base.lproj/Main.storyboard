@@ -37,16 +37,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="00J-og-JrS">
-                                <rect key="frame" x="16" y="288" width="343" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="00J-og-JrS">
+                                <rect key="frame" x="16" y="281" width="343" height="34"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOY-gD-PBc">
-                                <rect key="frame" x="127" y="400" width="121" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOY-gD-PBc">
+                                <rect key="frame" x="127" y="393" width="121" height="40"/>
                                 <color key="backgroundColor" red="0.82352941176470584" green="0.77647058823529413" blue="0.58039215686274503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Log in">
@@ -56,9 +54,8 @@
                                     <action selector="loginAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="HqR-HX-Bao"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uaE-dl-VOG">
-                                <rect key="frame" x="127" y="444" width="121" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uaE-dl-VOG">
+                                <rect key="frame" x="127" y="441" width="121" height="40"/>
                                 <color key="backgroundColor" red="0.82352941180000006" green="0.77647058820000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Sign up">
@@ -68,9 +65,8 @@
                                     <action selector="signupFunc" destination="BYZ-38-t0r" eventType="touchUpInside" id="ke9-Qo-S7X"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dxF-uN-SvO">
-                                <rect key="frame" x="16" y="340" width="343" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dxF-uN-SvO">
+                                <rect key="frame" x="16" y="333" width="343" height="34"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -88,11 +84,27 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hOY-gD-PBc" firstAttribute="top" secondItem="dxF-uN-SvO" secondAttribute="bottom" constant="26" id="5eU-fz-MPG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hOY-gD-PBc" secondAttribute="trailing" constant="127" id="IEp-nJ-W1J"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dxF-uN-SvO" secondAttribute="trailing" constant="16" id="Jwf-3L-nUv"/>
+                            <constraint firstItem="uaE-dl-VOG" firstAttribute="top" secondItem="hOY-gD-PBc" secondAttribute="bottom" constant="8" id="RzU-Gv-Yb8"/>
+                            <constraint firstItem="uaE-dl-VOG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="127" id="SnA-q1-xPI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="00J-og-JrS" secondAttribute="trailing" constant="16" id="UMs-so-CGv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uaE-dl-VOG" secondAttribute="bottom" constant="186" id="ViL-U3-Mc3"/>
+                            <constraint firstItem="dxF-uN-SvO" firstAttribute="top" secondItem="00J-og-JrS" secondAttribute="bottom" constant="18" id="eUV-QO-gac"/>
+                            <constraint firstItem="dxF-uN-SvO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="kFs-Mc-Of0"/>
+                            <constraint firstItem="00J-og-JrS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="mHO-Cq-oPo"/>
+                            <constraint firstItem="hOY-gD-PBc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="127" id="nT4-q1-BdS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uaE-dl-VOG" secondAttribute="trailing" constant="127" id="t2W-oQ-tEt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="emailText" destination="00J-og-JrS" id="246-A6-eoE"/>
+                        <outlet property="myImage" destination="QIG-7w-ZbH" id="HDu-v3-yf4"/>
                         <outlet property="passwordText" destination="dxF-uN-SvO" id="KPo-Lg-2WJ"/>
+                        <outlet property="signUpBottomCons" destination="ViL-U3-Mc3" id="HRG-H7-cnW"/>
                         <segue destination="kPm-93-UdI" kind="show" identifier="login" id="eSC-6h-L3i"/>
                     </connections>
                 </viewController>
@@ -635,6 +647,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="zdf-UV-Spr"/>
-        <segue reference="Z4R-MX-148"/>
+        <segue reference="eSC-6h-L3i"/>
     </inferredMetricsTieBreakers>
 </document>

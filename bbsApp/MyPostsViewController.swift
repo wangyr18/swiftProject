@@ -49,6 +49,18 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
         view.backgroundColor = UIColor(red: 210/255, green: 198/255, blue: 148/255, alpha: 1)
         // Do any additional setup after loading the view.
         currentTitle.removeAll()
+        
+        for i in 0 ..< userid.count{
+            if author[i] == email!{
+                if currentUserId.count == 0{
+                    currentUserId.append(userid[i])
+                }
+                else if userid[i] != currentUserId[currentUserId.count-1]{
+                    currentUserId.append(userid[i])
+                }
+            }
+        }
+        print(currentUserId)
         ref = Database.database().reference()
         for i in 0 ..< currentUserId.count{
             let uid = currentUserId[i]
@@ -63,6 +75,7 @@ class MyPostsViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
             })
         }
+//        print(currentTitle)
     }
 
     override func didReceiveMemoryWarning() {

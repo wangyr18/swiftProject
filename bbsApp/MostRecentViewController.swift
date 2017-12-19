@@ -101,23 +101,23 @@ class MostRecentViewController: UIViewController,UITableViewDelegate, UITableVie
                 author.append(temA)
                 allTitles.append(temT)
                 postTitles.append("\(temT)\n    Author: \(temA)")
-
+                
                 DispatchQueue.main.async {
                     self.myTableView.reloadData()
                 }
             }
 //            save the id of current user for ME
-            for i in 0 ..< userid.count{
-                if author[i] == email!{
-                    if currentUserId.count == 0{
-                        currentUserId.append(userid[i])
-                    }
-                    else if userid[i] != currentUserId[currentUserId.count-1]{
-                        currentUserId.append(userid[i])
-                    }
-                }
-            }
-            print(currentUserId)
+//            for i in 0 ..< userid.count{
+//                if author[i] == email!{
+//                    if currentUserId.count == 0{
+//                        currentUserId.append(userid[i])
+//                    }
+//                    else if userid[i] != currentUserId[currentUserId.count-1]{
+//                        currentUserId.append(userid[i])
+//                    }
+//                }
+//            }
+//            print(currentUserId)
         }
     }
 
