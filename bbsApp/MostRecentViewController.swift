@@ -36,7 +36,6 @@ class MostRecentViewController: UIViewController,UITableViewDelegate, UITableVie
         if let destination = segue.destination as? textViewController{
             destination.segueFromController = "MostRecentViewController";
         }
-        
     }
     
 
