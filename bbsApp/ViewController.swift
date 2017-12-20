@@ -15,6 +15,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
+    @IBOutlet weak var signUpBottomCons: NSLayoutConstraint!
+    @IBOutlet weak var myImage: UIImageView!
     
     @IBAction func signupFunc() {
         self.emailText.resignFirstResponder()
@@ -87,10 +89,33 @@ class ViewController: UIViewController {
         passwordText.text = ""
     }
     
+    @objc func keyboardWillShow(notification: NSNotification){
+        if let info = notification.userInfo {
+            
+//            let rect:CGRect = info["UIKeyboardFrameEndUserInfoKey"] as! CGRect
+            //            print("start+", bottomConstraint.constant)
+            self.view.layoutIfNeeded()
+            UIView.animate(withDuration: 0.25, animations: {
+                self.view.layoutIfNeeded()
+                self.signUpBottomCons.constant = 256 //-rect.height
+                self.myImage.frame = CGRect(x: 54, y: 82, width: 267, height: 112)
+                //                print("later:" , self.bottomConstraint.constant)
+            })
+        }
+    }
+    
+    // if i touched any place except the textFileds, the keyboard will be hiden.
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         view.backgroundColor = UIColor(red: 196/255, green: 18/255, blue: 48/255, alpha: 1)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
