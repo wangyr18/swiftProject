@@ -45,11 +45,10 @@ class textViewController: UIViewController {
     
     @IBAction func deleteAction(_ sender: UIBarButtonItem) {
         ref = Database.database().reference()
-        
         if authorLabel.text! == email{
             ref.child("users").child(uid!).removeValue()
             let controller = UIAlertController(title: "Delete!", message: "", preferredStyle: .alert)
-            let yesAction = UIAlertAction(title: "OK", style: .default, handler: {action in self.performSegue(withIdentifier: "back", sender: self)})
+            let yesAction = UIAlertAction(title: "OK", style: .default, handler: {action in self.unwind(sender)})
             controller.addAction(yesAction)
             self.present(controller, animated: true, completion: nil)
         }else{
