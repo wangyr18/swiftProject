@@ -26,14 +26,14 @@ class textViewController: UIViewController {
     
     @IBAction func unwind(_ sender: UIBarButtonItem) {
         if segueFromController == "MostRecentViewController"{
-            self.performSegue(withIdentifier: "BackToMostRecent", sender: self)
+            self.performSegue(withIdentifier: "backMost", sender: self)
         }
         else if segueFromController == "MyPostsViewController"{
-            self.performSegue(withIdentifier: "BackToMyPosts", sender: self)
+            self.performSegue(withIdentifier: "backMyPost", sender: self)
             
         }
         else if segueFromController == "MyLikesViewController"{
-            self.performSegue(withIdentifier: "BackToMyLikes", sender: self)
+            self.performSegue(withIdentifier: "backMyLike", sender: self)
         }
     }
     @IBAction func backToTextView(_sender: UIStoryboardSegue){

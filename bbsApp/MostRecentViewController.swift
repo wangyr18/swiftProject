@@ -73,7 +73,7 @@ class MostRecentViewController: UIViewController,UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("i am in")
         // Do any additional setup after loading the view.
         
         ref = Database.database().reference()

@@ -530,6 +530,9 @@
                         <segue destination="tKB-df-yu4" kind="unwind" identifier="BackToMostRecent" unwindAction="backToMostRecentViewControllerWith_sender:" id="Azh-nf-GHT"/>
                         <segue destination="tKB-df-yu4" kind="unwind" identifier="BackToMyLikes" unwindAction="backToMyLikesViewControllerWith_sender:" id="eb0-do-xMI"/>
                         <segue destination="tKB-df-yu4" kind="unwind" identifier="BackToMyPosts" unwindAction="backToMyPostsViewControllerWith_sender:" id="Saz-TJ-LIb"/>
+                        <segue destination="mhg-Zb-0gc" kind="show" identifier="backMyPost" id="r3X-yX-ddJ"/>
+                        <segue destination="Znl-9q-D8y" kind="show" identifier="backMyLike" id="YSJ-Oo-dsI"/>
+                        <segue destination="kPm-93-UdI" kind="show" identifier="backMost" id="RoJ-XV-vgb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qEK-50-jJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -647,6 +650,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="zdf-UV-Spr"/>
-        <segue reference="eSC-6h-L3i"/>
+        <segue reference="YSJ-Oo-dsI"/>
+        <segue reference="r3X-yX-ddJ"/>
+        <segue reference="RoJ-XV-vgb"/>
     </inferredMetricsTieBreakers>
 </document>
