@@ -15,6 +15,7 @@ class textViewController: UIViewController {
     var titles = [String]()
     var exist:Bool = false
     var likeId:String?
+    var deleteLike = [String]()
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var myTextView: UITextView!
@@ -47,6 +48,9 @@ class textViewController: UIViewController {
         ref = Database.database().reference()
         if authorLabel.text! == email{
             ref.child("users").child(uid!).removeValue()
+            for i in 0 ..< deleteLike.count{
+                ref.child("likes").child(deleteLike[i]).removeValue()
+            }
             let controller = UIAlertController(title: "Delete!", message: "", preferredStyle: .alert)
             let yesAction = UIAlertAction(title: "OK", style: .default, handler: {action in self.unwind(sender)})
             controller.addAction(yesAction)
@@ -102,6 +106,7 @@ class textViewController: UIViewController {
                 let temTitle = dict["title"] as? NSString
                 let temT = temTitle! as String
                 //                self.titles.append(temT)
+                print(temT)
                 let temUser = dict["user"] as? NSString
                 let temU = temUser! as String
                 if temU == email!{
@@ -115,7 +120,12 @@ class textViewController: UIViewController {
                     }
                 }
                 i += 1
-                print(self.likeId)
+//                print(self.likeId)
+                if temT == self.titleLabel.text!{
+                    let userdict = snapchat.key as NSString
+                    self.deleteLike.append(userdict as String)
+                }
+                print(self.deleteLike)
             }
         }
 

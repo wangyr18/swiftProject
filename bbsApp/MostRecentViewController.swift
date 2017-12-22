@@ -86,10 +86,10 @@ class MostRecentViewController: UIViewController,UITableViewDelegate, UITableVie
         currentUserId.removeAll()
         
         ref.child("users").observe(.childAdded) { (snapchat) in
-            if let userdict = snapchat.key as? NSString{
+            let userdict = snapchat.key as NSString
                 userid.append(userdict as String)
 //                print(userid)
-            }
+            
             if let dict = snapchat.value as? NSDictionary{
                 let temTitle = dict["title"] as? NSString
                 let temT = temTitle! as String

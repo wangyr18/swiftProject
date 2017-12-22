@@ -112,7 +112,7 @@
             </objects>
             <point key="canvasLocation" x="-4319.1999999999998" y="315.29235382308849"/>
         </scene>
-        <!--Me View Controller-->
+        <!--My Account-->
         <scene sceneID="nYE-36-yNZ">
             <objects>
                 <viewController id="JWh-II-Dmp" customClass="MeViewController" customModule="bbsApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -153,7 +153,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5Zx-KO-Wy5"/>
                     </view>
-                    <tabBarItem key="tabBarItem" selectedImage=" " id="hie-Uh-39w">
+                    <tabBarItem key="tabBarItem" title="My Account" selectedImage=" " id="hie-Uh-39w">
                         <color key="badgeColor" red="0.82352941180000006" green="0.77647058820000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <connections>
@@ -650,8 +650,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="zdf-UV-Spr"/>
-        <segue reference="YSJ-Oo-dsI"/>
-        <segue reference="r3X-yX-ddJ"/>
-        <segue reference="RoJ-XV-vgb"/>
+        <segue reference="gSy-HW-9WG"/>
+        <segue reference="nA4-Fn-sNx"/>
+        <segue reference="eSC-6h-L3i"/>
     </inferredMetricsTieBreakers>
 </document>

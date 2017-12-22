@@ -49,12 +49,20 @@ class commentViewController: UIViewController, UITextFieldDelegate,UITableViewDe
             self.commentText.resignFirstResponder()
             myComments?.append(email!)
             myComments?.append(commentText.text!)
-            print(myComments)
+//            print(myComments)
             let saveDate = ["article": myArticle!, "title": myTitle!, "class": myClass!, "id": myId!,"comments": myComments!] as [String : Any]
             self.ref.child("users").child(uid!).setValue(saveDate)
             showComments.append("\(email!):\n\(commentText.text!)")
             self.myTableView.reloadData()
         }
+        
+        self.view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.25, animations: {
+            self.view.layoutIfNeeded()
+            self.bottomConstraint.constant = 0
+        })
+        
+        commentText.text = ""
     }
     
     
@@ -72,6 +80,17 @@ class commentViewController: UIViewController, UITextFieldDelegate,UITableViewDe
         }
     }
     
+    // if i touched any place except the textFileds, the keyboard will be hiden.
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        
+        self.view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.25, animations: {
+            self.view.layoutIfNeeded()
+            self.bottomConstraint.constant = 0
+        })
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 210/255, green: 198/255, blue: 148/255, alpha: 1)
@@ -81,7 +100,7 @@ class commentViewController: UIViewController, UITextFieldDelegate,UITableViewDe
         ref = Database.database().reference()
 //        uid = userid[myIndex]
         self.showComments.removeAll()
-        print(uid)
+//        print(uid)
         ref.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapchat) in
             if let dict = snapchat.value as? [String: Any]{
                 print(dict)
